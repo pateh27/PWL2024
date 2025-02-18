@@ -26,5 +26,5 @@ Route::get('/about', [PageController::class, 'about']);
 Route::get('/articles/{id}', [PageController::class, 'articles']);
 
 Route::get('/home', [HomeController::class,'__invoke']);
-Route::get('/article', [ArticleController::class, '__invoke']);
+Route::get('/about', [AboutContollers::class, '__invoke']);
 Route::get('/article/{id}', [ArticleController::class, '__invoke']);
