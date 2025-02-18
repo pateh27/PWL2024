@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutContollers;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\PhotoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,9 @@ Route::get('/articles/{id}', [PageController::class, 'articles']);
 Route::get('/home', [HomeController::class,'__invoke']);
 Route::get('/about', [AboutContollers::class, '__invoke']);
 Route::get('/article/{id}', [ArticleController::class, '__invoke']);
+
+Route::resource('photos', PhotoController::class)->only([
+    'index', 'show']);
+Route::resource('photos', PhotoController::class)->except([
+    'create', 'store', 'update', 'destroy'
+]);
