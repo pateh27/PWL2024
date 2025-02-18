@@ -3,6 +3,9 @@
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutContollers;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +24,7 @@ Route::get('/index1', [PageController::class, 'index1']);
 Route::get('/about', [PageController::class, 'about']);
 
 Route::get('/articles/{id}', [PageController::class, 'articles']);
+
+Route::get('/home', [HomeController::class,'__invoke']);
+Route::get('/article', [ArticleController::class, '__invoke']);
+Route::get('/article/{id}', [ArticleController::class, '__invoke']);
