@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,3 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/hello', [WelcomeController::class, 'hello']);
+
+Route::get('/index1', [PageController::class, 'index1']);
+
+Route::get('/about', [PageController::class, 'about']);
+
+Route::get('/articles/{id}', [PageController::class, 'articles']);
